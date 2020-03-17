@@ -363,12 +363,12 @@ io.on('connection', function(socket) {
 
 /********** Access Area ***********/
 
-// app.use(
-//     cors({
-//       origin: 'http://localhost:3000',
-//       credentials: true,
-//     })
-//   );
+app.use(
+    cors({
+      origin: 'http://localhost:3000',
+      credentials: true,
+    })
+  );
 
 /********** End Access Area ***********/
   // Parse URL-encoded bodies (as sent by HTML forms)
@@ -379,14 +379,14 @@ io.on('connection', function(socket) {
 /********** App Use Area***********/
 
 app.use(express.json());
-app.use(router);
+//app.use(router);
 
-//if(process.env.NODE_ENV === 'devlopment'){
+if(process.env.NODE_ENV === 'devlopment'){
   app.use(express.static('client/build'));
-  // app.get('/',(req,res)=>{
-  //   res.sendFile('client/build/index.html');
-  // })
-//}
+  app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'client','build','index.html'));
+  })
+}
 
 
 /********** End App Use Area ***********/
