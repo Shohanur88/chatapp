@@ -1,9 +1,9 @@
 const dbCredentials = {
-    host: 'localhost',
+    host: 'ec2-3-234-169-147.compute-1.amazonaws.com',//'localhost',
     port: 5432,
-    user: 'postgres',
-    password: 'admin',
-    database:'chatapp'
+    user: 'ouuqlybhjrimgi',//'postgres',
+    password:  '814be1f462edd325f1c7f47665153ab668c24602b4fa7e08c83f893da9ac26ab',//'admin',
+    database:'d8pd3rp6sp7god'//'chatapp'
 }
 
 const { Client } = require('pg');

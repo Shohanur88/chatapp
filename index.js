@@ -3,6 +3,7 @@
 const express = require("express");
 const socketio = require('socket.io');
 const http = require('http');
+const path = require('path');
 
 const sql = require('./Sql');
 const cors = require('cors');
@@ -378,7 +379,16 @@ app.use(
 /********** App Use Area***********/
 
 app.use(express.json());
-app.use(router);
+//app.use(router);
+
+//if(process.env.NODE_ENV === 'devlopment'){
+  app.use(express.static('client/build'));
+  app.get('/',(req,res)=>{
+    console.log("Hello");
+    res.sendFile(path.join(__dirname,'client','build','index.html'));
+  })
+//}
+
 
 /********** End App Use Area ***********/
 
