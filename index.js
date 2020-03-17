@@ -383,7 +383,7 @@ app.use(express.json());
 
 //if(process.env.NODE_ENV === 'devlopment'){
   app.use(express.static('client/build'));
-  app.get('*',(req,res)=>{
+  app.get('/room',(req,res)=>{
     res.sendFile(path.join(__dirname,'client','build','index.html'));
   })
 //}
