@@ -363,12 +363,12 @@ io.on('connection', function(socket) {
 
 /********** Access Area ***********/
 
-app.use(
-    cors({
-      origin: 'http://localhost:3000',
-      credentials: true,
-    })
-  );
+// app.use(
+//     cors({
+//       origin: 'http://localhost:3000',
+//       credentials: true,
+//     })
+//   );
 
 /********** End Access Area ***********/
   // Parse URL-encoded bodies (as sent by HTML forms)
